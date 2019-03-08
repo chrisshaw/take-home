@@ -1,0 +1,126 @@
+<html>
+    <head>
+        <style>
+            
+        </style>
+    </head>
+<body>
+
+<h2>Sidekick Credits</h2>
+
+<input type="checkbox" name="" value="" checked disabled> - 0.25 credits<br>
+<input type="hidden" value="0" name="cb" id="cb">
+
+<script>
+//sample data
+var json = '{"counts": {"socialStudies": 2,"math": 1.5,"science": 2.25,"english": 3,"pe": 0.5,"health": 0.5,"electives": 4.75}}';
+obj = JSON.parse(json);
+//test to see what the parsed data looks like
+console.log(obj);
+    
+/*
+create checkbox function with div and a bool for whether it's checked or not as arguments
+- appends the checkbox to the div which is defined by cycle()
+- cycle() also passes the value of the checkbox
+*/
+function createCB(Div, isChecked)
+     {
+        var i = parseInt(document.getElementById("cb").value);
+        var cb = document.createElement("input");
+        cb.type = "checkbox";
+        cb.id = "id"+i;
+        cb.name = "name"+i;
+        cb.value = "test";
+        cb.checked = isChecked;
+        cb.disabled = true;
+        document.getElementById(Div).appendChild( cb );
+        document.getElementById("cb").value = parseInt(document.getElementById("cb").value) + 1;
+     }
+    
+/*
+cycles x number of times to create checkboxes
+- x being the value passed ie. obj["counts"]["socialStudies"] = 2
+*/
+var divID = 0;
+function cycle(type) {
+    var initDiv = document.createElement('div');
+    initDiv.id = type;
+    initDiv.className = type;
+    document.getElementsByTagName('body')[0].appendChild(initDiv);
+    initDiv.innerHTML = type;
+    /*
+    //attempted to create two different divs everytime cycle is called
+    //one for the top two items of the box and one for the bottom two items
+    var oneDiv = document.createElement('div');
+    oneDiv.id = "grp1" + divID;
+    oneDiv.className = "grp1" + divID;
+    initDiv.appendChild(oneDiv);
+    
+    var twoDiv = document.createElement('div');
+    twoDiv.id = "grp2" + divID:
+    twoDiv.className = "grp2" + divID;
+    initDiv.appendChild(twoDiv);
+    */
+    divID++;
+    var total = obj["counts"][type];
+    var count = 0;
+    //creates an integer amount of checkboxes
+    for (i = 0.0; i < Math.ceil(obj["counts"][type]); i+= 0.25) {
+        //checks if the box is even and if it is, it tries to put it in a separate div 
+        //the flawed logic is that the 3rd checkbox goes to the bottom first etc.
+        if (count % 2 == 0) {
+            console.log("derp")
+            //checks the boxes up to the value
+            if (total != 0) {
+                createCB(type, true);
+                //createCB(twoDiv, true);
+                total -= 0.25;
+            }
+            else {
+                createCB(type, false);
+                //createCB(twoDiv, false);
+            }
+        }
+        else {
+            //checks the boxes up to the value
+            if (total != 0) {
+                createCB(type, true);
+                //createCB(oneDiv, true);
+                total -= 0.25;
+            }
+            else {
+                createCB(type, false);
+                //createCB(oneDiv, false);
+            }
+        }
+        count++;
+    }
+}
+
+/*
+//attempted to iterate through counts object so I didn't have to call cycle() for every item but ran out of time
+for (var property in obj) {
+  if (obj.hasOwnProperty(property)) {
+  console.log(property);
+  	for (var prop in property) {
+    	console.log(prop);
+  	}
+  }
+}
+
+document.getElementById("1").innerHTML =
+obj["counts"]["socialStudies"];
+*/
+
+cycle("socialStudies");
+cycle("math");
+cycle("science");
+cycle("english");
+cycle("pe");
+cycle("health");
+cycle("electives");
+
+</script>
+
+</body>
+</html>
