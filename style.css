@@ -1,0 +1,39 @@
+html, body {
+	height: 100%;
+	background: #fff;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+/* .col-lg-auto i {
+	color: rgb(69, 70, 71, 0.8);
+} */
+.card {
+	height: 50%;
+	width: 50%;
+	padding-top: 20px;
+	background-color: rgba(229, 229, 229, 0.3);
+}
+.col-lg-auto {
+	padding: 0 0 0 0;
+}
+.jumbotron {
+	background-color: rgba(229, 229, 229, 0.3);
+}
+.container {
+	padding-top: 10px;
+}
+.incomplete {
+	color: rgba(0, 0, 0, 0.2);
+}
+.dashboard_top {
+	height: 200px;
+	background-color: #DAF7A6;
+	padding-left: 40px;
+	padding-top: 40px;
+}
+

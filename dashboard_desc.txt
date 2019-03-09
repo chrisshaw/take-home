@@ -1,0 +1,6 @@
+For building the dashboard, I liked the mockup given and decided to build the project off it. I wanted a minimalist design and so I stuck with a two-tone background, I choose a light green, in homage to Sidekick's green tone.
+
+I used bootstrap 4.0 for their powerful flexbox layout. Each course is it's own row and the credit squares are nested flexboxes.
+In things I could further improve, I would use embedded js to use loops to prevent repition in code. Also I would display the data from response-data.json rather than hardcode it. 
+
+I also wanted to add a progress bar on the right of each course row, however that would require js and the requirements mentioned sticking to html/css
