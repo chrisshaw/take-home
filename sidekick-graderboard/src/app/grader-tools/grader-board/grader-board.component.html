@@ -1,0 +1,127 @@
+
+<button mat-raised-button (click)="show = !show" color="accent">
+  {{ show ? 'Hide Grader Board' : 'Show Graduation board' }}
+</button>
+
+<div class="container" *ngIf="show" @enterLeave>
+  <ng-container *ngFor="let course of courses; let i = index">
+    <div class="row course">
+      <div class="col-3" *ngIf="i<=3 || i == 6"><h5>{{ course.courseName | uppercase }} ({{ course.creditGain }})</h5></div>
+      <div class="col-5" *ngIf="i < 3">
+        <div class="oneCredit">
+          <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+          <button class="quarter" mat-raised-button (click)="addCredit(i)"></button><br/>
+          <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+          <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+        </div>
+        <div class="oneCredit">
+          <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+          <button class="quarter" mat-raised-button (click)="addCredit(i)"></button><br/>
+          <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+          <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+        </div>
+        <div class="oneCredit">
+          <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+          <button class="quarter" mat-raised-button (click)="addCredit(i)"></button><br/>
+          <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+          <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+        </div>
+      </div>
+
+      <div class="col-5" *ngIf="i == 3">
+          <div class="oneCredit">
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button><br/>
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+          </div>
+          <div class="oneCredit">
+              <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+              <button class="quarter" mat-raised-button (click)="addCredit(i)"></button><br/>
+              <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+              <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+            </div>
+          <div class="oneCredit">
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button><br/>
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+          </div>
+          <div class="oneCredit">
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button><br/>
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+          </div>
+      </div>
+
+      <div class="col-5" *ngIf="i == 6">
+          <div class="oneCredit">
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button><br/>
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+          </div>
+          <div class="oneCredit">
+              <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+              <button class="quarter" mat-raised-button (click)="addCredit(i)"></button><br/>
+              <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+              <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+            </div>
+          <div class="oneCredit">
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button><br/>
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+          </div>
+          <div class="oneCredit">
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button><br/>
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+            <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+          </div>
+          <div class="oneCredit">
+              <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+              <button class="quarter" mat-raised-button (click)="addCredit(i)"></button><br/>
+              <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+              <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+            </div>
+            <div class="oneCredit">
+                <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+                <button class="quarter" mat-raised-button (click)="addCredit(i)"></button><br/>
+                <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+                <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+              </div>
+            <div class="oneCredit">
+              <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+              <button class="quarter" mat-raised-button (click)="addCredit(i)"></button><br/>
+              <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+              <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+            </div>
+      </div>
+      <div class="col-3" *ngIf="i == 4 || i == 5"><h5>{{ course.courseName | uppercase }} ({{ course.creditGain }})</h5></div>
+      <div class="col-2" *ngIf="i == 4">
+        <div class="oneCredit">
+          <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+          <button class="quarter" mat-raised-button (click)="addCredit(i)"></button><br/>
+          <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+          <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+        </div>
+      </div>
+      <div class="col-2" *ngIf="i == 5">
+        <div class="oneCredit">
+          <button class="quarter" mat-raised-button (click)="addCredit(i)"></button><br/>
+          <button class="quarter" mat-raised-button (click)="addCredit(i)"></button>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+      
+  </ng-container>
+ 
+  
+</div>
