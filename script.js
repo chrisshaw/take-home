@@ -1,3 +1,7 @@
+//---- this is the way I would do it, but only contains the code
+//for displaying the socialStudies data ----//
+
+
 //load json file using jquery
 $.getJSON('response-data.json', function (json) {
 let data = [];
