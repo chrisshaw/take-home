@@ -1,0 +1,19 @@
+/* Basic styles that are used to display methodology of how I would do this */
+
+h5 {
+  width: 200px;
+  display:inline-block;
+}
+
+.sscredit-box{
+  width: 15px;
+  height: 15px;
+  position: relative;
+  background: blue;
+  display: inline-block;
+}
+
+#sscredit-container{
+  width: 20%;
+  display: inline-block;
+}
